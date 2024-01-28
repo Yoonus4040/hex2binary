@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+    </style>
+    <title>Hex to Binary Converter</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Hex to Binary Converter</h1>
+            <h3>by yoonus4040</p>
+        <label for="hexInput">Enter Hexadecimal:</label>
+        <input type="text" id="hexInput" placeholder="Enter Hexadecimal" oninput="convertHexToBinary()">
+        <p id="binaryOutput">Binary: </p>
+        <p id="explanation">Explanation: </p>
+    </div>
+    <script>
+        function convertHexToBinary() {
+            const hexInput = document.getElementById('hexInput').value.toUpperCase();
+            const binaryOutput = document.getElementById('binaryOutput');
+            const explanation = document.getElementById('explanation');
+
+            let binaryResult = '';
+            let explanationText = '';
+
+            // Hex to binary conversion logic
+            for (let i = 0; i < hexInput.length; i++) {
+                const hexChar = hexInput.charAt(i);
+                const binaryValue = parseInt(hexChar, 16).toString(2).padStart(4, '0');
+                binaryResult += binaryValue;
+                explanationText += `Hex '${hexChar}' is equivalent to Binary '${binaryValue}'.\n`;
+            }
+
+            binaryOutput.textContent = `Binary: ${binaryResult}`;
+            explanation.textContent = `Explanation:\n${explanationText}`;
+        }
+    </script>
+</body>
+</html>
