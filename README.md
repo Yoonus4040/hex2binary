@@ -20,6 +20,7 @@ D   | 1101
 E   | 1110
 F   | 1111
 
+try it out at https://a808ed8a-86fd-42a0-9b73-90deebf2bce4-00-3nzrnvsdz35kd.worf.replit.dev
 Now, let's convert hex 6C16 to binary and format it in Markdown:
 
 ```markdown
